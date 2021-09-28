@@ -1,0 +1,8 @@
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInforUser\bin\Debug\GetInforUser.exe.config
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInforUser\bin\Debug\GetInforUser.exe
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInforUser\bin\Debug\GetInforUser.pdb
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInforUser\obj\Debug\GetInforUser.ProjectInstaller.resources
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInforUser\obj\Debug\GetInforUser.csproj.GenerateResource.cache
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInforUser\obj\Debug\GetInforUser.csproj.CoreCompileInputs.cache
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInforUser\obj\Debug\GetInforUser.exe
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInforUser\obj\Debug\GetInforUser.pdb
