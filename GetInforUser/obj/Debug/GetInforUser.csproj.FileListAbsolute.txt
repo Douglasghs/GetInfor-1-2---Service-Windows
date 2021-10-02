@@ -6,3 +6,4 @@ C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInfo
 C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInforUser\obj\Debug\GetInforUser.csproj.CoreCompileInputs.cache
 C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInforUser\obj\Debug\GetInforUser.exe
 C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInforUser\obj\Debug\GetInforUser.pdb
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\GetInforUser\obj\Debug\GetInforUser.csproj.AssemblyReference.cache

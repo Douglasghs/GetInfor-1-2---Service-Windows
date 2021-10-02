@@ -14,6 +14,7 @@ namespace GetInforUser
 {
     public partial class Service1 : ServiceBase
     {
+        string urlCaminhoArquivoLog = "@/Users/Ruann/OneDrive/Documentos/GitHub/GetInfor-1-2---Service-Windows/Configurações/ARQUIVO DE LOG.txt";
         Timer timer1;
 
         public Service1()
@@ -23,24 +24,50 @@ namespace GetInforUser
 
         protected override void OnStart(string[] args)
         {
-            timer1 = new Timer(new TimerCallback(timer1_Tick), null, 15000, 60000);
+            try
+            {
+                timer1 = new Timer(new TimerCallback(timer1_Tick), null, 15000, 60000);
+            }
+            catch (Exception e)
+            {
+                StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
+
+                vWriter.WriteLine("----------   Serviço Método OnStart   ----------");
+                vWriter.WriteLine(DateTime.Now.ToString());
+                vWriter.WriteLine("Source : " + e.Source);
+                vWriter.WriteLine("Message : " + e.Message);
+                vWriter.Flush();
+                vWriter.Close();
+            }
         }
 
         protected override void OnStop()
         {
-            StreamWriter vWriter = new StreamWriter(@"c:\testeServico.txt", true);
+            try
+            {
+                StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
 
-            vWriter.WriteLine("Servico Parado: " + DateTime.Now.ToString());
-            vWriter.Flush();
-            vWriter.Close();
+                vWriter.WriteLine("----------   Serviço Parado   ----------");
+                vWriter.WriteLine(DateTime.Now.ToString());
+                vWriter.Flush();
+                vWriter.Close();
+            }
+            catch (Exception e)
+            {
+                StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
+
+                vWriter.WriteLine("----------   Serviço Método OnStop   ----------");
+                vWriter.WriteLine(DateTime.Now.ToString());
+                vWriter.WriteLine("Source : " + e.Source);
+                vWriter.WriteLine("Message : " + e.Message);
+                vWriter.Flush();
+                vWriter.Close();
+            }
         }
 
         private void timer1_Tick(object sender)
         {
-            StreamWriter vWriter = new StreamWriter(@"c:\testeServico.txt", true);
-            vWriter.WriteLine("Servico Rodando: " + DateTime.Now.ToString());
-            vWriter.Flush();
-            vWriter.Close();
+            
         }
     }
 }
