@@ -13,6 +13,9 @@ namespace GetInforUser
     class GetInforClass
     {
         string urlCaminhoArquivoLog = "@/Users/Ruann/OneDrive/Documentos/GitHub/GetInfor-1-2---Service-Windows/Configurações/ARQUIVO DE LOG.txt";
+        string IpAndress;
+        string userName;
+        string hostName;
 
         private string GetIpAndressIPV4()
         {
@@ -172,19 +175,15 @@ namespace GetInforUser
         }
 
 
-        public string[] GetAllValues()
+        public void GetAllValues(ref string IPV4, ref string IPV6, ref string UserName, ref string HostName, ref string MemoryRAM)
         {
-            string[] valores = new string[5];
-
             try
             {
-                valores[0] = this.GetIpAndressIPV4();
-                valores[0] = this.GetIpAndressIPV6();
-                valores[0] = this.GetUserName();
-                valores[0] = this.GetHostName();
-                valores[0] = this.GetMemoryRAM();
-
-                return valores;
+                IPV4 = this.GetIpAndressIPV4();
+                IPV6 = this.GetIpAndressIPV6();
+                UserName = this.GetUserName();
+                HostName = this.GetHostName();
+                MemoryRAM = this.GetMemoryRAM();
             }
             catch (Exception e)
             {
@@ -196,8 +195,6 @@ namespace GetInforUser
                 vWriter.WriteLine("Message : " + e.Message);
                 vWriter.Flush();
                 vWriter.Close();
-
-                return valores;
             }
         }
        
