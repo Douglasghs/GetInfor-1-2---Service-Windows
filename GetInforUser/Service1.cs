@@ -67,7 +67,7 @@ namespace GetInforUser
 
         private void timer1_Tick(object sender)
         {
-            
+            SetInforClass SetInforClass = new SetInforClass();
         }
     }
 }
