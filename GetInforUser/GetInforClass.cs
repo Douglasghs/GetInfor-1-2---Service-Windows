@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace GetInforUser
 {
     // Parte do código responsável por pegar as informações necessárias da máquina
-    class GetInforClass
+    public class GetInforClass
     {
         string urlCaminhoArquivoLog = @"C:/Users/Ruann/OneDrive/Documentos/GitHub/GetInfor-1-2---Service-Windows/Configurações/ARQUIVO DE LOG.txt";
 

@@ -15,5 +15,10 @@ namespace GetInforUser
         {
             InitializeComponent();
         }
+
+        private void GetInforUser_AfterInstall(object sender, InstallEventArgs e)
+        {
+
+        }
     }
 }

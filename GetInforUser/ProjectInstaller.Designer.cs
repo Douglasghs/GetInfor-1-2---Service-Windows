@@ -43,6 +43,7 @@ namespace GetInforUser
             this.GetInforUser.Description = "GetInforUser";
             this.GetInforUser.DisplayName = "GetInforUser";
             this.GetInforUser.ServiceName = "GetInforUser";
+            this.GetInforUser.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.GetInforUser_AfterInstall);
             // 
             // ProjectInstaller
             // 

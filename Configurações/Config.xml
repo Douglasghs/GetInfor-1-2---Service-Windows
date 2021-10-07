@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<UrlCadastro>http://localhost:8081/Cadastro/</UrlCadastro>
+<UrlRemocao>http://localhost:8081/Remocao/</UrlRemocao>
+<TimeLoop>6</TimeLoop>
