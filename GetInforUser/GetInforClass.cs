@@ -10,12 +10,10 @@ using System.Threading.Tasks;
 
 namespace GetInforUser
 {
+    // Parte do código responsável por pegar as informações necessárias da máquina
     class GetInforClass
     {
-        string urlCaminhoArquivoLog = "@/Users/Ruann/OneDrive/Documentos/GitHub/GetInfor-1-2---Service-Windows/Configurações/ARQUIVO DE LOG.txt";
-        string IpAndress;
-        string userName;
-        string hostName;
+        string urlCaminhoArquivoLog = @"C:/Users/Ruann/OneDrive/Documentos/GitHub/GetInfor-1-2---Service-Windows/Configurações/ARQUIVO DE LOG.txt";
 
         private string GetIpAndressIPV4()
         {
@@ -26,26 +24,20 @@ namespace GetInforUser
                 var ippaddress = host
                     .AddressList
                     .FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
+
                 return ippaddress.ToString();
             }
             catch (SocketException e)
             {
                 StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
 
-                vWriter.WriteLine("----------   Serviço Método GetIpAndressIPV4   ----------");
-                vWriter.WriteLine(DateTime.Now.ToString());
-                vWriter.WriteLine("Source : " + e.Source);
-                vWriter.WriteLine("Message : " + e.Message);
-                vWriter.Flush();
-                vWriter.Close();
                 return "";
             }
             catch (Exception e)
             {
                 StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
 
-                vWriter.WriteLine("----------   Serviço Método GetIpAndressIPV4   ----------");
-                vWriter.WriteLine(DateTime.Now.ToString());
+                vWriter.WriteLine("----------   Serviço Método GetIpAndressIPV4   ---------- " + DateTime.Now.ToString());
                 vWriter.WriteLine("Source : " + e.Source);
                 vWriter.WriteLine("Message : " + e.Message);
                 vWriter.Flush();
@@ -63,14 +55,14 @@ namespace GetInforUser
                 var ippaddress = host
                     .AddressList
                     .FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetworkV6);
+
                 return ippaddress.ToString();
             }
             catch (SocketException e)
             {
                 StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
 
-                vWriter.WriteLine("----------   Serviço Método GetIpAndressIPV6   ----------");
-                vWriter.WriteLine(DateTime.Now.ToString());
+                vWriter.WriteLine("----------   Serviço Método GetIpAndressIPV6   ---------- " + DateTime.Now.ToString());
                 vWriter.WriteLine("Source : " + e.Source);
                 vWriter.WriteLine("Message : " + e.Message);
                 vWriter.Flush();
@@ -81,8 +73,7 @@ namespace GetInforUser
             {
                 StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
 
-                vWriter.WriteLine("----------   Serviço Método GetIpAndressIPV6   ----------");
-                vWriter.WriteLine(DateTime.Now.ToString());
+                vWriter.WriteLine("----------   Serviço Método GetIpAndressIPV6   ---------- " + DateTime.Now.ToString());
                 vWriter.WriteLine("Source : " + e.Source);
                 vWriter.WriteLine("Message : " + e.Message);
                 vWriter.Flush();
@@ -105,14 +96,14 @@ namespace GetInforUser
                 {
                     Userwindows = disk["FullName"].ToString();
                 }
+
                 return Userwindows;
             }
             catch (Exception e)
             {
                 StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
 
-                vWriter.WriteLine("----------   Serviço Método GetUserName   ----------");
-                vWriter.WriteLine(DateTime.Now.ToString());
+                vWriter.WriteLine("----------   Serviço Método GetUserName   ---------- " + DateTime.Now.ToString());
                 vWriter.WriteLine("Source : " + e.Source);
                 vWriter.WriteLine("Message : " + e.Message);
                 vWriter.Flush();
@@ -132,8 +123,7 @@ namespace GetInforUser
             {
                 StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
 
-                vWriter.WriteLine("----------   Serviço Método GetHostName   ----------");
-                vWriter.WriteLine(DateTime.Now.ToString());
+                vWriter.WriteLine("----------   Serviço Método GetHostName   ---------- " + DateTime.Now.ToString());
                 vWriter.WriteLine("Source : " + e.Source);
                 vWriter.WriteLine("Message : " + e.Message);
                 vWriter.Flush();
@@ -163,8 +153,7 @@ namespace GetInforUser
             {
                 StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
 
-                vWriter.WriteLine("----------   Serviço Método GetMemoryRAM   ----------");
-                vWriter.WriteLine(DateTime.Now.ToString());
+                vWriter.WriteLine("----------   Serviço Método GetMemoryRAM   ---------- " + DateTime.Now.ToString());
                 vWriter.WriteLine("Source : " + e.Source);
                 vWriter.WriteLine("Message : " + e.Message);
                 vWriter.Flush();
@@ -189,8 +178,7 @@ namespace GetInforUser
             {
                 StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
 
-                vWriter.WriteLine("----------   Serviço Método GetAllValue   ----------");
-                vWriter.WriteLine(DateTime.Now.ToString());
+                vWriter.WriteLine("----------   Serviço Método GetAllValue   ---------- " + DateTime.Now.ToString());
                 vWriter.WriteLine("Source : " + e.Source);
                 vWriter.WriteLine("Message : " + e.Message);
                 vWriter.Flush();

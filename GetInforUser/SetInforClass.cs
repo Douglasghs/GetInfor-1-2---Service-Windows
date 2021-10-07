@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 
 namespace GetInforUser
 {
+    // Parte do código responsável por mandar para o webservice as informações
+    // -- Corrigir a passagem de valores pelo corpo
     class SetInforClass
     {
 
         GetInforClass GetInforClass = new GetInforClass();
         private static readonly HttpClient Requisicao = new HttpClient();
         string URLCadastro = "http://localhost:8081/Cadastro";
-        string urlCaminhoArquivoLog = "@/Users/Ruann/OneDrive/Documentos/GitHub/GetInfor-1-2---Service-Windows/Configurações/ARQUIVO DE LOG.txt";
+        string urlCaminhoArquivoLog = @"C:/Users/Ruann/OneDrive/Documentos/GitHub/GetInfor-1-2---Service-Windows/Configurações/ARQUIVO DE LOG.txt";
 
         private string IPV4 = "";
         private string IPV6 = "";
@@ -23,32 +25,30 @@ namespace GetInforUser
         private string HostName = "";
         private string MemoryRAM = "";
 
+        private bool VerifyRequisicaoCadastro = false;
+        private bool VerifyRequisicaoRemocao = false;
 
-        public SetInforClass()
+
+        public void SetInforClassDuol()
         {
             GetInforClass.GetAllValues(ref IPV4, ref IPV6, ref UserName, ref HostName, ref MemoryRAM);
 
-            if ((IPV4 != "") && (IPV6 != "") && (UserName != "") && (HostName != "") && (MemoryRAM != ""))
+            if ((IPV4.Equals("")) && (IPV6.Equals("")) && (UserName.Equals("")) && (HostName.Equals("")) && (MemoryRAM.Equals("")))
             {
-                this.RequisicaoCadastro();
+                if (VerifyRequisicaoCadastro.Equals(false))
+                {
+                    this.RequisicaoCadastro();
+                }
+                else if (VerifyRequisicaoRemocao.Equals(true))
+                {
+                    this.RequisicaoRemocao();
+                }
             }
         }
 
-        /*public static async Task GetDadosWebServiceAsync()
-        {
-            HttpResponseMessage response = await HttpClient.GetAsync(paisesUrl);
-            if (response.IsSuccessStatusCode)
-            {
-                Console.WriteLine($"Status Code do Response : {(int)response.StatusCode} {response.ReasonPhrase}");
-                string responseBodyAsText = await response.Content.ReadAsStringAsync();
-                Console.WriteLine($"Recebidos payload de {responseBodyAsText.Length} caracteres");
-                Console.WriteLine();
-                Console.WriteLine(responseBodyAsText);
-            }
-        }*/
-
          public bool RequisicaoCadastro()
-        {
+         {
+            VerifyRequisicaoCadastro = true;
             try
             {
                 var values = new Dictionary<string, string>
@@ -62,8 +62,8 @@ namespace GetInforUser
 
                 var content = new StringContent(JsonConvert.SerializeObject(values), Encoding.UTF8, "application/json");
 
-                Requisicao.PutAsync(URLCadastro+"/"+values, content);
-                
+                Requisicao.PutAsync(URLCadastro, content);
+
                 return true;
             }
             catch (Exception e)
@@ -79,6 +79,47 @@ namespace GetInforUser
 
                 return false;
             }
+        }
+
+
+        public bool RequisicaoRemocao()
+        {
+            try
+            {
+                var values = new Dictionary<string, string>
+                  {
+                  { "IPV4", IPV4},
+                  { "IPV6", IPV6},
+                  { "UserName", UserName},
+                  { "HostName",  HostName},
+                  { "MemoryRAM", MemoryRAM}
+                };
+
+                var content = new StringContent(JsonConvert.SerializeObject(values), Encoding.UTF8, "application/json");
+
+                Requisicao.PutAsync(URLCadastro, content);
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
+
+                vWriter.WriteLine("----------   Serviço Método GetAllValue   ----------");
+                vWriter.WriteLine(DateTime.Now.ToString());
+                vWriter.WriteLine("Source : " + e.Source);
+                vWriter.WriteLine("Message : " + e.Message);
+                vWriter.Flush();
+                vWriter.Close();
+
+                return false;
+            }
+        }
+
+        public void TrocaValorRequisicapRemocao()
+        {
+            VerifyRequisicaoRemocao = true;
+            this.SetInforClassDuol();
         }
     }
 }
