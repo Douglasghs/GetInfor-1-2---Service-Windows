@@ -21,14 +21,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_38AB24D1ED71F13E799E7F29C3049866"
-        "OwnerKey" = "8:_D28C99BB8A2541138554B4B16D8D4277"
+        "MsmKey" = "8:_1F0B6E30EF8249DE8D8335221DA8737F"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B88930E770D691BC9F9DD15827731EE7"
-        "OwnerKey" = "8:_D28C99BB8A2541138554B4B16D8D4277"
+        "MsmKey" = "8:_6B8CC4AFA8D449478733BE2706AC9268"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -39,6 +39,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_ECB74025DE06F88330FAAA35BE44A8DA"
+        "OwnerKey" = "8:_D28C99BB8A2541138554B4B16D8D4277"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F70CCA8A1529C38E27518FAF750285CA"
+        "OwnerKey" = "8:_D28C99BB8A2541138554B4B16D8D4277"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_D28C99BB8A2541138554B4B16D8D4277"
         "MsmSig" = "8:_UNDEFINED"
@@ -46,13 +58,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_38AB24D1ED71F13E799E7F29C3049866"
+        "OwnerKey" = "8:_ECB74025DE06F88330FAAA35BE44A8DA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B88930E770D691BC9F9DD15827731EE7"
+        "OwnerKey" = "8:_F70CCA8A1529C38E27518FAF750285CA"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -112,6 +124,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -194,6 +214,16 @@
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=863262"
                 }
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_CD7D3C662CA240499F8AD22DDC2E5880"
+                {
+                "Name" = "8:.NET Core"
+                "Message" = "8:[VSDNETCOREMSG]"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:https://dotnet.microsoft.com/download/dotnet-core/[NetCoreVerMajorDotMinor]"
+                "IsNETCore" = "11:TRUE"
+                "Architecture" = "2:0"
+                "Runtime" = "2:0"
+                }
             }
         }
         "File"
@@ -218,14 +248,34 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_38AB24D1ED71F13E799E7F29C3049866"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6B8CC4AFA8D449478733BE2706AC9268"
+            {
+            "SourcePath" = "8:..\\Desktop_Config\\bin\\Debug\\net5.0-windows\\Desktop_Config.exe"
+            "TargetName" = "8:Desktop_Config.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_254DCC76CDBD41BCA7FF0939A794BE0B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_ECB74025DE06F88330FAAA35BE44A8DA"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_38AB24D1ED71F13E799E7F29C3049866"
+                    "_ECB74025DE06F88330FAAA35BE44A8DA"
                     {
                     "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
@@ -249,14 +299,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B88930E770D691BC9F9DD15827731EE7"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F70CCA8A1529C38E27518FAF750285CA"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_B88930E770D691BC9F9DD15827731EE7"
+                    "_F70CCA8A1529C38E27518FAF750285CA"
                     {
                     "Name" = "8:System.Net.Http.dll"
                     "Attributes" = "3:512"
@@ -337,7 +387,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:GetInforUser_SETUP"
         "ProductCode" = "8:{BF25A208-44DE-4EF9-930E-50B0D9B17B55}"
-        "PackageCode" = "8:{D4C2CCEF-2B0E-40B1-90BB-29394FE451EC}"
+        "PackageCode" = "8:{1A425B48-D365-44DE-86CB-4760684E6CBE}"
         "UpgradeCode" = "8:{D1ABF3BA-ADE8-4A06-A9C0-B52ED90DF4CB}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -856,6 +906,34 @@
         }
         "ProjectOutput"
         {
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1F0B6E30EF8249DE8D8335221DA8737F"
+            {
+            "SourcePath" = "8:..\\Desktop_Config\\obj\\Debug\\net5.0-windows\\Desktop_Config.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_254DCC76CDBD41BCA7FF0939A794BE0B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:Debug|Any CPU"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{44D4645B-E509-4A1D-9521-BEF47B7A1CF9}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D28C99BB8A2541138554B4B16D8D4277"
             {
             "SourcePath" = "8:..\\GetInforUser\\obj\\Debug\\GetInforUser.exe"

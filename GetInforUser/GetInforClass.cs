@@ -7,13 +7,14 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace GetInforUser
 {
     // Parte do código responsável por pegar as informações necessárias da máquina
     public class GetInforClass
     {
-        string urlCaminhoArquivoLog = @"C:/Users/Ruann/OneDrive/Documentos/GitHub/GetInfor-1-2---Service-Windows/Configurações/ARQUIVO DE LOG.txt";
+        string urlCaminhoArquivoLog = @"C:/Program Files (x86)/GetInfor_Service/GetInforUser_SETUP/ARQUIVO DE LOG.txt";
 
         private string GetIpAndressIPV4()
         {
@@ -25,12 +26,23 @@ namespace GetInforUser
                     .AddressList
                     .FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
 
+                StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
+
+                vWriter.WriteLine("----------   Serviço Método GetIpAndressIPV4   ---------- " + DateTime.Now.ToString());
+                vWriter.Flush();
+                vWriter.Close();
+
                 return ippaddress.ToString();
             }
             catch (SocketException e)
             {
                 StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
 
+                vWriter.WriteLine("----------   Serviço Método GetIpAndressIPV4   ---------- " + DateTime.Now.ToString());
+                vWriter.WriteLine("Source : " + e.Source);
+                vWriter.WriteLine("Message : " + e.Message);
+                vWriter.Flush();
+                vWriter.Close();
                 return "";
             }
             catch (Exception e)
@@ -55,6 +67,12 @@ namespace GetInforUser
                 var ippaddress = host
                     .AddressList
                     .FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetworkV6);
+
+                StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
+
+                vWriter.WriteLine("----------   Serviço Método GetIpAndressIPV6   ---------- " + DateTime.Now.ToString());
+                vWriter.Flush();
+                vWriter.Close();
 
                 return ippaddress.ToString();
             }
@@ -88,15 +106,21 @@ namespace GetInforUser
             
             try
             {
-                string DomainName = System.Environment.UserDomainName;
-                string AccountName = System.Environment.UserName.ToLower();
-                SelectQuery query = new SelectQuery("select FullName from Win32_UserAccount where domain='" + DomainName + "' and name='" + AccountName + "'");
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
-                foreach (ManagementBaseObject disk in searcher.Get())
+                SelectQuery query = new SelectQuery(@"Select * from Win32_Process");
+                using (ManagementObjectSearcher searcher = new ManagementObjectSearcher(query))
                 {
-                    Userwindows = disk["FullName"].ToString();
-                }
+                    foreach (System.Management.ManagementObject Process in searcher.Get())
+                    {
+                        if (Process["ExecutablePath"] != null &&
+                            string.Equals(Path.GetFileName(Process["ExecutablePath"].ToString()), "explorer.exe", StringComparison.OrdinalIgnoreCase))
+                        {
+                            string[] OwnerInfo = new string[2];
+                            Process.InvokeMethod("GetOwner", (object[])OwnerInfo);
 
+                            Userwindows = OwnerInfo[0];
+                        }
+                    }
+                }
                 return Userwindows;
             }
             catch (Exception e)
@@ -117,6 +141,12 @@ namespace GetInforUser
         {
             try
             {
+                StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
+
+                vWriter.WriteLine("----------   Serviço Método GetHostName   ---------- " + DateTime.Now.ToString());
+                vWriter.Flush();
+                vWriter.Close();
+
                 return Dns.GetHostName();
             }
             catch (Exception e)
@@ -147,6 +177,12 @@ namespace GetInforUser
                     Capacity += Convert.ToUInt64(WniPART.Properties["Capacity"].Value);
                 }
 
+                StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
+
+                vWriter.WriteLine("----------   Serviço Método GetMemoryRAM   ---------- " + DateTime.Now.ToString());
+                vWriter.Flush();
+                vWriter.Close();
+
                 return Capacity.ToString();
             }
             catch(Exception e)
@@ -173,6 +209,13 @@ namespace GetInforUser
                 UserName = this.GetUserName();
                 HostName = this.GetHostName();
                 MemoryRAM = this.GetMemoryRAM();
+
+                StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
+
+                vWriter.WriteLine("----------   Serviço Método GetAllValues   ---------- " + DateTime.Now.ToString());
+                vWriter.Flush();
+                vWriter.Close();
+
             }
             catch (Exception e)
             {
@@ -185,6 +228,5 @@ namespace GetInforUser
                 vWriter.Close();
             }
         }
-       
     }
 }

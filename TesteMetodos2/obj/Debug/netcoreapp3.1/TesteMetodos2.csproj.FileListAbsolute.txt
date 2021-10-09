@@ -1,0 +1,13 @@
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\bin\Debug\netcoreapp3.1\TesteMetodos2.exe
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\bin\Debug\netcoreapp3.1\TesteMetodos2.deps.json
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\bin\Debug\netcoreapp3.1\TesteMetodos2.runtimeconfig.json
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\bin\Debug\netcoreapp3.1\TesteMetodos2.runtimeconfig.dev.json
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\bin\Debug\netcoreapp3.1\TesteMetodos2.dll
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\bin\Debug\netcoreapp3.1\TesteMetodos2.pdb
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\obj\Debug\netcoreapp3.1\TesteMetodos2.csproj.AssemblyReference.cache
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\obj\Debug\netcoreapp3.1\TesteMetodos2.AssemblyInfoInputs.cache
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\obj\Debug\netcoreapp3.1\TesteMetodos2.AssemblyInfo.cs
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\obj\Debug\netcoreapp3.1\TesteMetodos2.csproj.CoreCompileInputs.cache
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\obj\Debug\netcoreapp3.1\TesteMetodos2.dll
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\obj\Debug\netcoreapp3.1\TesteMetodos2.pdb
+C:\Users\Ruann\OneDrive\Documentos\GitHub\GetInfor-1-2---Service-Windows\TesteMetodos2\obj\Debug\netcoreapp3.1\TesteMetodos2.genruntimeconfig.cache

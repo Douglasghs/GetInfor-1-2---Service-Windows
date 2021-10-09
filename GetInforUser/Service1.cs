@@ -14,7 +14,7 @@ namespace GetInforUser
 {
     public partial class Service1 : ServiceBase
     {
-        string urlCaminhoArquivoLog = @"C:/Users/Ruann/OneDrive/Documentos/GitHub/GetInfor-1-2---Service-Windows/Configurações/ARQUIVO DE LOG.txt";
+        string urlCaminhoArquivoLog = @"C:/Program Files (x86)/GetInfor_Service/GetInforUser_SETUP/ARQUIVO DE LOG.txt";
         Timer timer1;
         SetInforClass SetInforClass = new SetInforClass();
 
@@ -27,7 +27,7 @@ namespace GetInforUser
         {
             try
             {
-                timer1 = new Timer(new TimerCallback(timer1_Tick), null, 15000, 60000);
+                timer1 = new Timer(new TimerCallback(timer1_Tick), null, 7000, 30000);
 
                 StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
 

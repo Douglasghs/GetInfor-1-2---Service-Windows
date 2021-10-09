@@ -24,3 +24,8 @@
 ---------- 2  HostName: LAPTOP-IQ81CHRH06/10/2021 20:41:11
 ---------- 2  MemoryRAM: 858993459206/10/2021 20:41:11
 ----------   Serviço Parado   ---------- 06/10/2021 20:41:46
+----------   Serviço Iniciado   ---------- 07/10/2021 14:45:05
+----------   Serviço Iniciado   ---------- 07/10/2021 14:46:39
+----------   Serviço Método OnStop   ---------- 07/10/2021 14:46:42
+Source : mscorlib
+Message : Não foi possível localizar uma parte do caminho 'C:\Windows\system32\C\Program Files (x86)\GetInfor_Service\GetInforUser_SETUP\ARQUIVO DE LOG.txt'.
