@@ -128,7 +128,7 @@ namespace GetInforUser
 
                 var content = new StringContent(JsonConvert.SerializeObject(values), Encoding.UTF8, "application/json");
 
-                Requisicao.PutAsync(URLCadastro, content);
+                Requisicao.PostAsync(URLCadastro, content);
 
                 StreamWriter vWriter = new StreamWriter(urlCaminhoArquivoLog, true);
 
@@ -160,6 +160,7 @@ namespace GetInforUser
             {
                 var values = new Dictionary<string, string>
                   {
+
                   { "IPV4", IPV4},
                   { "IPV6", IPV6},
                   { "UserName", UserName},
